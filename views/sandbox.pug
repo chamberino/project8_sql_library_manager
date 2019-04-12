@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  
+  table
+    thead
+      tr
+        th first name
+        th last name
+    tbody
+      each name in names
+        tr
+          td #{name.First}
+          td #{name.Last}
