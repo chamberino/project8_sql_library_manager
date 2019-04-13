@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -23,14 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/sandbox', sandboxRouter);
 app.use('/books', booksRouter);
-
-// app.get('/books', function(req, res, next) {
-//   res.render('books', {prompt: "I'm a variable"});
-// });
-
-// app.get('/sandbox', (req, res, next) => {
-//   res.render('sandbox', {names});
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

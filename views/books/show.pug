@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= book.title
+  //- include by_line
+  p= book.author
+  //- a(href="../") &larr; Back
+  //- | | 
+  //- a(href="/articles/" + article.id + "/edit") Edit Article
+  //- | | 
+  //- a(href="/articles/" + article.id + "/dele

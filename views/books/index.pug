@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1= title
+  p Listing all articles
+  p
+    a(href="/books/new") Create New Article
+  table
+    thead
+      tr
+        th Title
+        th Author
+        th Genre
+        th Year
+    tbody
+      each book in books
+        tr
+          td #{book.title}
+          td #{book.author}
+          td #{book.genre}
+          td #{book.year}
