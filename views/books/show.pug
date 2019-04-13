@@ -4,8 +4,9 @@ block content
   h1= book.title
   //- include by_line
   p= book.author
-  //- a(href="../") &larr; Back
-  //- | | 
-  //- a(href="/articles/" + article.id + "/edit") Edit Article
-  //- | | 
-  //- a(href="/articles/" + article.id + "/dele
+  p= book.genre
+  a(href="../") &larr; Back
+  | | 
+  a(href="/books/" + book.id + "/edit") Edit Book
+  | | 
+  a(href="/books/" + book.id + "/delete") Delete Book
