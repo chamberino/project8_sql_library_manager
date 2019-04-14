@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 /* POST create book. */
 router.post('/', function(req, res, next) {
   Book.create(req.body).then(function(book) {
-    res.redirect("/books/" + book.id);
+    res.redirect("/books");
   });
 ;});
 
@@ -21,8 +21,16 @@ router.get('/new', function(req, res, next) {
   res.render("books/new", {book: Book.build(), title: "New Book"});
 });
 
+/* Delete book form. */
+router.get("/:id/delete", function(req, res, next){
+  console.log(req.params);
+  Book.findByPk(req.params.id).then(function(book){
+    res.render("books/delete", {book: book, title: "Delete Book"});
+   });
+});
+
 /* Edit book form. */
-router.get("/:id/edit", function(req, res, next){
+router.get("/:id/update", function(req, res, next){
   Book.findByPk(req.params.id).then(function(book){
     res.render("books/edit", {book: book, title: "Edit Book"});
   });
@@ -31,13 +39,14 @@ router.get("/:id/edit", function(req, res, next){
 /* PUT update book. */
 router.put("/:id", function(req, res, next){
   Book.findByPk(req.params.id).then(function(book){
+    console.log(req.body)
     return book.update(req.body);
   }).then(function(book){
-    res.redirect("/books/" + book.id);
+    res.redirect("/books");
   });
 });
 
-/* Delete book form. */
+/* Delete book. */
 router.delete("/:id", function(req, res, next){
   Book.findByPk(req.params.id).then(function(book){
     return book.destroy();
