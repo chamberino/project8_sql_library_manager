@@ -4,11 +4,14 @@ body {
 }
 
 a {
-  /* color: #019875; */
+  display: inline-block;
+  /* width: 50px; */
   color: #00B7FF;
   text-decoration: none;
   font-weight: bold;
   transition: 0.4s;
+  padding: 10px 14px 12px;
+  margin-top: 0 .5em;
 }
 
   a:hover {
@@ -17,11 +20,9 @@ a {
 
 a.button, input[type=submit] {
   color: white;
-  /* color: #00B7FF; */
-  /* background: #019875; */
   background-color: #00B7FF;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 10px 14px 12px;
+  /* padding: 10px 14px 12px; */
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;
@@ -33,7 +34,10 @@ form a.button, input[type=submit] {
 }
 
 input[type=submit] {
+  display: block;
   border: 0;
+  padding: 10px 14px 12px;
+  /* width: 50px; */
 }
 
   a.button:hover, input[type=submit]:hover {
@@ -41,7 +45,7 @@ input[type=submit] {
   }
 
 p {
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
 ul {
