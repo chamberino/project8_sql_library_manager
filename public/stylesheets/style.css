@@ -3,7 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+a, button.button {
   display: inline-block;
   /* width: 50px; */
   color: #00B7FF;
@@ -14,11 +14,12 @@ a {
   margin-top: 0 .5em;
 }
 
+
   a:hover {
     color: black;
   }
 
-a.button, input[type=submit] {
+a.button, button.button, input[type=submit] {
   color: white;
   background-color: #00B7FF;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -26,6 +27,22 @@ a.button, input[type=submit] {
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;
+}
+
+input {
+  max-width: 200px;
+}
+
+button.button {
+  /* margin-top: 1em; */
+  border: none;
+}
+
+input {
+  display: block;
+  border: 1;
+  padding: 10px 14px 12px;
+  /* width: 50px; */
 }
 
 form a.button, input[type=submit] {
@@ -101,4 +118,46 @@ input[type=text] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* justify-content: center; */
+}
+
+.search {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center
+}
+
+div.pagination a {
+  margin: 1em;
+  margin-top: 2em;
+  padding: 6px 10px 8px;
+  margin-top: 0 .5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  a.button {
+    margin-left: 1em;
+  }
 }
